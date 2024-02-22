@@ -1,15 +1,24 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './shared/components';
+import { AppComponent } from './app.component';
 
-import { HomeRoutingModule } from './home/home-routing.module';
-import { DetailRoutingModule } from './detail/detail-routing.module';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'pages',
     pathMatch: 'full'
+  },
+  {
+    path: "",
+    component: AppComponent,
+    children: [
+      {
+        path: "pages",
+        loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule)
+      },
+    ]
   },
   {
     path: '**',
@@ -20,8 +29,6 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, {}),
-    HomeRoutingModule,
-    DetailRoutingModule
   ],
   exports: [RouterModule]
 })

@@ -17,4 +17,11 @@ export class TauriService {
     const text = await invoke('hello_world_command');
     console.log(text);
   }
+
+  async exec_command(command: string){
+    const response = await invoke('exec_command', {
+      command: command
+    });
+    return response;
+  }
 }

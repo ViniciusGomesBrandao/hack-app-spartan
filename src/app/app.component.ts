@@ -11,14 +11,9 @@ import {TauriService} from './core/services';
 export class AppComponent {
   constructor(
     private tauriService: TauriService,
-    private translate: TranslateService
   ) {
-    this.translate.setDefaultLang('en');
-    console.log('APP_CONFIG', APP_CONFIG);
-
     if (this.tauriService.isTauri) {
       console.log('Run in Tauri');
-      this.tauriService.callHelloWorld();
     } else {
       console.log('Run in browser');
     }

@@ -48,11 +48,17 @@
       "active": false
     },
     "allowlist": {
-      "all": true
+      "all": true,
+      "shell": {
+        "all": true, 
+        "execute": true, 
+        "sidecar": true,
+        "open": true
+      }
     },
     "windows": [
       {
-        "title": "Angular Tauri",
+        "title": "Mobley`s App",
         "width": 800,
         "height": 600,
         "resizable": true,
