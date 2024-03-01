@@ -6,6 +6,7 @@ import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { TauriService } from '../core/services';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HlmButtonDirective } from '../_components/ui-button-helm/src/lib/hlm-button.directive';
 
 
 
@@ -19,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     PagesRoutingModule,
+    HlmButtonDirective
   ],
   providers: [
     TauriService
